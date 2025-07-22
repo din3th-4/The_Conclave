@@ -1,8 +1,12 @@
 package cardinal;
 
+import java.util.* ;
+
 class Characters {
     private Characters() {
     }
+
+    static final List<String> usedNames = new ArrayList<>() ;
 
     static final String[] characteristics = {"continent", "age", "charisma", "popularity", "deception", "politicalCons",
             "religiousCons", "societalViews", "econIdeology", "ambition", "churchAuth",
