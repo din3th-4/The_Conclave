@@ -13,41 +13,56 @@ public class Cardinal implements Runnable {
 
     private SecureRandom random = new SecureRandom() ;
 
-    private LinkedHashMap<String, Object> generateProfile() {
-
-        LinkedHashMap<String, Object> profile = this.profile ;
+    private void generateProfile() {
 
         for (String characteristic : characteristics) {
 
             if (characteristic.equals("continent")){
 
                 //continent is assigned as a number so that in a cardinal interaction comparing continents will be fast
-                profile.put(characteristic, random.nextInt(6)) ;
+                this.profile.put(characteristic, random.nextInt(6)) ;
 
             } else if (characteristic.equals("age")) {
 
                 //generates cardinal age from 65-80
-                profile.put(characteristic, random.nextInt(14) + 65) ;
+                this.profile.put(characteristic, random.nextInt(14) + 65) ;
 
             } else {
 
-                profile.put( characteristic, random.nextDouble(101) ) ;
+                this.profile.put( characteristic, random.nextDouble(101) ) ;
 
             }
 
-
         }
 
-        return profile ;
     }
 
     private void makeName() {
 
+        int attempts = 0 ;
+        int maxAttempts = 25 ;
+
+        int contiNum = (Integer) this.profile.get("continent") ;
+
+        int nameIndex = random.nextInt(25) ;
+
+        this.name = switch (contiNum) {
+
+            case 0 -> Asia[nameIndex];
+            case 1 -> Europe[nameIndex];
+            case 2 -> Africa[nameIndex];
+            case 3 -> NAmerica[nameIndex];
+            case 4 -> SAmerica[nameIndex];
+            case 5 -> Australia[nameIndex];
+            default -> this.name ;
+
+        } ;
+
+        if (usedNames.contains(this.name)) {
+
+        }
+
     }
-
-
-
-
 
 
 
