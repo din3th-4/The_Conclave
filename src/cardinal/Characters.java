@@ -8,7 +8,7 @@ class Characters {
 
     static final List<String> usedNames = new ArrayList<>() ;
 
-    static final String[] characteristics = {"continent", "age", "charisma", "popularity", "deception", "politicalCons",
+    static final String[] characteristics = {"charisma", "popularity", "deception", "politicalCons",
             "religiousCons", "societalViews", "econIdeology", "ambition", "churchAuth",
             "localPower", "multilingual", "health", "loyalty", "voteSelf", "rigidness"} ;
 
