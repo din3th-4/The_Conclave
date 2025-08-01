@@ -12,6 +12,13 @@ class Characters {
             "religiousCons", "societalViews", "econIdeology", "ambition", "churchAuth",
             "localPower", "multilingual", "health", "loyalty", "voteSelf", "rigidness"} ;
 
+    static final String[] views = {"politicalCons", "religiousCons", "societalViews", "econIdeology", "churchAuth",
+                                    "localPower", "multilingual"} ;
+
+    static final String[] medium = {"charisma", "popularity", "churchAuth", "ambition", "multilingual"} ;
+
+    static final String[] light = {"politicalCons", "religiousCons", "societalViews", "econIdeology", "localPower"} ;
+
     static String[] continents = {"Asia", "Europe", "Africa", "NAmerica", "SAmerica", "Australia"} ;
 
     static String[] Europe = {"Vincent Rinaldi", "Luca Bellini", "Krzysztof Wozniak", "Henrik Faulkner",
