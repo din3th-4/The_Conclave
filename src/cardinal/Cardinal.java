@@ -11,6 +11,9 @@ All attributes are private with getter methods, tester method is way out in the 
 
 public class Cardinal implements Runnable {
 
+    public int x ;
+    public int y ;
+
     public int num ; //identify cardinal by number
     public int votes ;
 
