@@ -2,6 +2,7 @@ package cardinal;
 
 import static cardinal.Characters.* ;
 import java.security.SecureRandom;
+import java.sql.SQLOutput;
 import java.util.* ;
 
 /*
@@ -11,11 +12,11 @@ All attributes are private with getter methods, tester method is way out in the 
 
 public class Cardinal implements Runnable {
 
-    public int x ;
-    public int y ;
+    public Position position ;
 
     public int num ; //identify cardinal by number
-    public int votes ;
+
+    public int votes ;      //number of votes the cardinal got in the previous round of voting
 
     private String name ;
     private int age ;
@@ -43,6 +44,13 @@ public class Cardinal implements Runnable {
         generateProfile() ;
         setMainCharacterEnergy() ;
         setLikability() ;
+
+        if (this.num == 0){
+            this.position = new Position ( 0, 0 ) ;
+        } else {
+            this.position = new Position ( random.nextInt(151), random.nextInt(151) ) ;
+        }
+
 
     }
 
@@ -141,7 +149,7 @@ public class Cardinal implements Runnable {
 
 
 
-    //methods to get characteristics
+    //getter methods for characteristics
     public String getName() {
 
         return name ;
@@ -183,6 +191,40 @@ public class Cardinal implements Runnable {
 
     }
 
+    //subClass to maintain the position of the cardinal on the grid
+    private class Position {
+
+        private int x ; //x coordinate
+        private int y ; //y coordinate
+
+        Position (int x, int y) {
+            this.x = x ;
+            this.y = y ;
+        }
+
+        public void setX(int x) {
+            this.x = x ;
+        }
+        public void setY(int y) {
+            this.y = y ;
+        }
+        public int getX() {
+            return x ;
+        }
+        public int getY() {
+            return y ;
+        }
+
+
+        //get the position
+
+        public String getPosition() {
+            return "(" + x + " , " + y + ")" ;
+        }
+
+
+    }
+
 
 
     //method for testing
@@ -193,8 +235,8 @@ public class Cardinal implements Runnable {
         System.out.println("continent " + c.getContinent()) ;
         System.out.println("profile " + c.getProfile()) ;
         System.out.println("mainCharEnergy " + c.getMainCharEnergy()) ;
-        System.out.println("setLikability "+ c.getLikability());
-
+        System.out.println("Likability "+ c.getLikability()) ;
+        System.out.println("Position "+ c.position.getPosition()) ;
     }
 
 
