@@ -1,8 +1,7 @@
 package cardinal;
 
 import static cardinal.Characters.* ;
-import java.security.SecureRandom;
-import java.sql.SQLOutput;
+import java.security.SecureRandom ;
 import java.util.* ;
 
 /*
