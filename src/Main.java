@@ -3,11 +3,13 @@ import cardinal.* ;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 import static cardinal.Cardinal.* ;
 
 
 public class Main {
+
 
 
     public HashMap< Integer, HashSet<Integer> > cardinalPositions ;

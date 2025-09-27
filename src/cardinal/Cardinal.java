@@ -7,11 +7,14 @@ import java.util.* ;
 /*
 Entire work of a cardinal, cardinal number is set in the main when the cardinal is created.
 All attributes are private with getter methods, tester method is way out in the bottom to test out characteristics
+The "votes" & "position" attributes are publicly available.
+"position" is used to maintain a position in the grid
  */
 
 public class Cardinal implements Runnable {
 
     public Position position ;
+    public Boolean engaged = false ;
 
     public int num ; //identify cardinal by number
 
@@ -27,6 +30,7 @@ public class Cardinal implements Runnable {
     private LinkedHashMap<String, Double> whoIVote ;
     private HashSet<Integer> interactedWith ;
 
+
     /* one cardinal also needs to be a moderator, will be set based on church authority, moderator methods will be in a
     separate class, default is false, when selected will be set to true */
     private boolean moderator = false ;
@@ -37,6 +41,7 @@ public class Cardinal implements Runnable {
     public Cardinal() {
 
         identity() ; //set name and continent
+
 
         //self-explanatory
         setAge() ;
@@ -191,7 +196,7 @@ public class Cardinal implements Runnable {
     }
 
     //subClass to maintain the position of the cardinal on the grid
-    private class Position {
+    class Position {
 
         private int x ; //x coordinate
         private int y ; //y coordinate

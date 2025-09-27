@@ -3,6 +3,9 @@ package cardinal;
 import java.util.* ;
 
 class Characters {
+
+    public static Cardinal[][] cardinalArray = new Cardinal[151][151] ;
+
     private Characters() {
     }
 

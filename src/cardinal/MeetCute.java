@@ -1,9 +1,10 @@
-package cardinal;
+package cardinal ;
+
 
 
 public class MeetCute {
 
-    public static double interactionScore ( Cardinal me, Cardinal you ) {
+    public static double interactionScore (Cardinal me, Cardinal you ) {
 
         me.getInteractedWith().add(you.num) ;
         you.getInteractedWith().add(me.num) ;
